@@ -1,4 +1,4 @@
-# Talk on &ldquo; Learning Trees and Forests&rdquo;
+# Talk on &ldquo;Learning Trees and Forests&rdquo;
 
 Work in progress.
 
