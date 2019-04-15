@@ -4,7 +4,10 @@ $(STEM).pdf: $(STEM).tex header.tex
 	xelatex $<
 
 notes: $(STEM)_withnotes.pdf
-all: $(STEM).pdf notes
+bright: $(STEM)_bright.pdf
+all: $(STEM).pdf notes bright
+clean:
+	Ruby/clean.rb
 
 $(STEM)_withnotes.pdf: $(STEM)_withnotes.tex header.tex
 	xelatex $(STEM)_withnotes
@@ -13,3 +16,9 @@ $(STEM)_withnotes.pdf: $(STEM)_withnotes.tex header.tex
 
 $(STEM)_withnotes.tex: $(STEM).tex Ruby/createVersionWithNotes.rb
 	Ruby/createVersionWithNotes.rb $(STEM).tex $(STEM)_withnotes.tex
+
+$(STEM)_bright.pdf: $(STEM)_bright.tex header.tex
+	xelatex $<
+	
+$(STEM)_bright.tex: $(STEM).tex Ruby/createVersionInBright.rb
+	Ruby/createVersionWithNotes.rb $(STEM).tex $(STEM)_bright.tex
