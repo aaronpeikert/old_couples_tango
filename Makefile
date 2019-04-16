@@ -1,4 +1,4 @@
-STEM = repro_research
+STEM = forest
 
 $(STEM).pdf: $(STEM).tex header.tex
 	xelatex $<
