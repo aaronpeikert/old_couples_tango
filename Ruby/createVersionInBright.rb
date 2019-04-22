@@ -7,10 +7,7 @@ ofilename = ARGV.length > 1 ? ARGV[1] : ifilename.sub(".tex", "_bright.tex")
 ifile = File.open(ifilename)
 ofile = File.open(ofilename, "w")
 
-do_1st_sub = true
-do_2nd_sub = true
 ifile.readlines.each do |z|
-
   ofile.write("\\def\\notescolors{1}\n") if /^\\input{/ =~ z # add line saying to use notes colors
-
+  ofile.write(z)
 end

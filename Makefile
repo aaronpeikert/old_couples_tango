@@ -21,4 +21,4 @@ $(STEM)_bright.pdf: $(STEM)_bright.tex header.tex
 	xelatex $<
 	
 $(STEM)_bright.tex: $(STEM).tex Ruby/createVersionInBright.rb
-	Ruby/createVersionWithNotes.rb $(STEM).tex $(STEM)_bright.tex
+	Ruby/createVersionInBright.rb $(STEM).tex $(STEM)_bright.tex
