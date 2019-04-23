@@ -18,6 +18,8 @@
 \date{
 \scriptsize {\lolit Slides:} \href{https://github.com/aaronpeikert/ForestEden}{\tt \scriptsize
   \color{foreground} https://github.com/aaronpeikert/ForestEden}
+\scriptsize {\lolit Notes:} \href{https://github.com/aaronpeikert/ForestEden}{\tt \scriptsize
+  \color{foreground} https://github.com/aaronpeikert/ForestEden}
 }
 
 
@@ -30,7 +32,50 @@
   \titlepage
 
   \vfill \hfill \includegraphics[height=6mm]{Figs/cc-zero.png} \vspace*{-1cm}
+  
+  \note{These Slides are for a short Talk (10min) intended vor a beginner audience where no statistical knowledge can be expected. 
+
+    Source: {\tt https://github.com/aaronpeikert/ForestEden}
 }}
+
+\begin{frame}[c]{The Great Divide}
+  \begin{center}
+  \large
+  ``There are two kinds of people:\\
+  those who divide everything in into two kinds\\
+  and those who don’t."
+  \end{center}
+  \hfill {\textendash} (paraphrasing) \lolit \href{http://hdl.handle.net/2027/mdp.39015032024203?urlappend=\%3Bseq=203}{Robert Benchley}
+  \note{
+  This epigram captures the unreasonable assumption behind trees that everyhing is a binary class and at the same time that a lot of things can be captures in two classes. This fundamental, but for all but the most trivial cases, false assumption is what centrally drives decision trees.
+  }
+\end{frame}
+
+\begin{frame}[c]{Garden Eden of Algorythms}
+  \large
+  \begin{center}
+  \only<1>{``With Decision Trees you can have your cake and eat it too."}
+  \Large
+  \only<2|handout:0>{Transparent}
+  \only<3|handout:0>{Easy to understand}
+  \only<4|handout:0>{Natural formulation}
+  \only<5|handout:0>{Dirt cheap}
+  \only<6|handout:0>{High capacity}
+  \only<7|handout:0>{High generalizability}
+  \only<8|handout:0>{can model (almost) anything}
+  \end{center}
+  \note{
+  Decision Trees have the following very fortunate properties:
+  \begin{itemize}
+  \item Transparent, all ``paramter" have a direkt meaning
+  \item Easy to understand, the tree can be translated in ``If \ldots then \ldots" \textendash Statements
+  \item Natural formulation, these statements are in much use even for humans, it is common to capture expert knowledge in those sentences
+  \item Dirt cheap in terms of computational costs
+  \item High capacity or high generalizability, whatever is more appropriate
+  \item Many data generating processes can be fitted, depending on the choosen capacity even all
+  \end{itemize}
+  }
+\end{frame}
 
 \begin{frame}[c]{Summary}
 
@@ -50,7 +95,7 @@
 
 \Large
 
-\scriptsize {\lolit Slides:} \href{https://github.com/aaronpeikert/ForestEden}{\tt \scriptsize
+\scriptsize {\lolit Source:} \href{https://github.com/aaronpeikert/ForestEden}{\tt \scriptsize
   \color{foreground} https://github.com/aaronpeikert/ForestEden} \quad
 \includegraphics[height=5mm]{Figs/cc-zero.png}
 
