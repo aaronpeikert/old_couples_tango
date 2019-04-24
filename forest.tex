@@ -1,5 +1,6 @@
 \documentclass[12pt,t]{beamer}
 \usepackage{graphicx}
+\usepackage{tikz}
 \setbeameroption{hide notes}
 \setbeamertemplate{note page}[plain]
 \usepackage{listings}
@@ -32,7 +33,7 @@
 
   \vfill \hfill \includegraphics[height=6mm]{Figs/cc-zero.png} \vspace*{-1cm}
   
-  \note{These Slides are for a short Talk (10min) intended vor a beginner audience where no statistical knowledge can be expected. 
+  \note{These Slides are for a short Talk (10min) intended for a beginner audience where no statistical knowledge can be expected. 
 
     Source: {\tt https://github.com/aaronpeikert/ForestEden}
 }}
@@ -53,30 +54,71 @@
 
 \begin{frame}[c]{The Great Divide}
   \large
-  \onslide<1-|handout:1>\textcolor<5|handout:0>{lolit}{If \textcolor<2,3,4|handout:0>{lolit}{condition}, then \textcolor<3,4|handout:0>{nvhilit}{class}, else \textcolor<4|handout:0>{vhilit}{other class}.} \\
-  \onslide<5-|handout:1> \textcolor<handout:0>{nvhilit}{class} and \textcolor<handout:0>{vhilit}{other class} can be again an other condition.
+  \onslide<1-|handout:1>\textcolor<5-|handout:0>{lolit}{If \textcolor<2,3,4|handout:0>{lolit}{condition}, then \textcolor<3,4|handout:0>{nvhilit}{class}, else \textcolor<4|handout:0>{vhilit}{other class}.} \\
+  \onslide<5-|handout:1> \textcolor<handout:0>{nvhilit}{class} and \textcolor<handout:0>{vhilit}{other class} can be again an other condition.\\
+  \onslide<6-|handout:1>Resulting in \textcolor<handout:0>{hilit}{yet another class}.\\
+  \onslide<7|handout:0>\Huge Confused?
   \note{
   
   }
 \end{frame}
 
+\begin{frame}[fragile, c]{Metaphor}
+  \tikzset{
+    treenode/.style = {shape=rectangle, rounded corners,
+                       draw, align=center,
+                       text=background,
+                       color=lolit},
+    root/.style     = {treenode},
+    env/.style      = {treenode},
+    level 1/.style={sibling distance=7em},
+    level 2/.style={sibling distance=5em},
+    level 3/.style={sibling distance=3em},
+    level 4/.style={sibling distance=7em},
+    class1/.style      = {treenode, color=hilit},
+    class2/.style      = {treenode, color=nvhilit},
+    dummy/.style    = {circle,draw}
+  }
+  \begin{tikzpicture}
+    [
+      grow                    = right,
+      sibling distance        = 3em,
+      level distance          = 6em,
+      edge from parent/.style = {draw, -latex},
+      every node/.style       = {font=\footnotesize},
+      sloped
+    ]
+    \node [root] {initial condition}
+      child { node [env] {condition 1} 
+        child{ node [env]{condition 1.2}
+          child{ node [class1]{class 1}}
+          child{ node [class2]{class 2}}}
+        child{ node [env] {condition 1.1}
+          child{ node [class1]{class 1}}
+          child{ node [class2]{class 2}}}}
+      child { node [class1] {class 1}};
+  \end{tikzpicture}
+\end{frame}
+
+
 \begin{frame}[c]{Garden Eden of Algorythms}
   \large
   \begin{center}
-  \only<1>{``With Decision Trees you can have your cake and eat it too."}
+  \only<1|handout:0>{Imagine growing these trees automaticly\\}
+  \only<2|handout:1>{``With Decision Trees you can have your cake and eat it too."\\}
   \Large
-  \only<2|handout:0>{Transparent}
-  \only<3|handout:0>{Easy to understand}
-  \only<4|handout:0>{Natural formulation}
-  \only<5|handout:0>{Dirt cheap}
-  \only<6|handout:0>{High capacity}
-  \only<7|handout:0>{High generalizability}
-  \only<8|handout:0>{can model (almost) anything}
+  \only<3|handout:0>{Transparent}
+  \only<4|handout:0>{Easy to understand}
+  \only<5|handout:0>{Natural formulation}
+  \only<6|handout:0>{Dirt cheap}
+  \only<7|handout:0>{High capacity}
+  \only<8|handout:0>{High generalizability}
+  \only<9|handout:0>{can model (almost) anything}
   \end{center}
   \note{
   Decision Trees have the following very fortunate properties:
   \begin{itemize}
-  \item Transparent, all ``paramter" have a direkt meaning
+  \item Transparent, all ``paramters" have a direkt meaning
   \item Easy to understand, the tree can be translated in ``If \ldots then \ldots" \textendash Statements
   \item Natural formulation, these statements are in much use even for humans, it is common to capture expert knowledge in those sentences
   \item Dirt cheap in terms of computational costs
