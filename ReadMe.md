@@ -1,6 +1,6 @@
 # Talk on &ldquo;Learning Trees and Forests&rdquo;
 
-Work in progress.
+Here you can find the [notes](https://github.com/aaronpeikert/ForestEden/releases/download/stusti/forest_withnotes.pdf), [dark slides](https://github.com/aaronpeikert/ForestEden/releases/download/stusti/forest.pdf) & bright slides [bright slides](https://github.com/aaronpeikert/ForestEden/releases/download/stusti/forest_bright.pdf).
 
 ---
 
