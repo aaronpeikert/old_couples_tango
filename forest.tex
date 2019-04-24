@@ -48,18 +48,29 @@
   \end{center}
   \hfill {\textendash} (paraphrasing) \lolit \href{http://hdl.handle.net/2027/mdp.39015032024203?urlappend=\%3Bseq=203}{Robert Benchley}
   \note{
-  This epigram captures the unreasonable assumption behind trees that everyhing is a binary class. At the same time a lot of things can be captures in two classes. This fundamental assumption is in all, but the most trivial cases, false. However it proves to be most versatile and is what centrally drives decision trees.
+    This epigram captures the unreasonable assumption behind trees that everyhing is a binary class. At the same time a lot of things can be captures in two classes. This fundamental assumption is in all, but the most trivial cases, false. However it proves to be most versatile and is what centrally drives decision trees.
   }
+\end{frame}
+
+\begin{frame}[c]{Goal}
+  \begin{center}
+  \large
+  Let's stick to this binary world\\
+  \note{
+    Imagine our goal is it to predict to which kind a person belongs. For that purpose we get informations about that person.\\
+    Translated in ML slang this is a classification task, where the class of an instance is to be predicted by certan features. 
+  }
+  \end{center}
 \end{frame}
 
 \begin{frame}[c]{The Great Divide}
   \large
-  \onslide<1-|handout:1>\textcolor<5-|handout:0>{lolit}{If \textcolor<2,3,4|handout:0>{lolit}{condition}, then \textcolor<3,4|handout:0>{nvhilit}{class}, else \textcolor<4|handout:0>{vhilit}{other class}.} \\
-  \onslide<5-|handout:1> \textcolor<handout:0>{nvhilit}{class} and \textcolor<handout:0>{vhilit}{other class} can be again an other condition.\\
-  \onslide<6-|handout:1>Resulting in \textcolor<handout:0>{hilit}{yet another class}.\\
+  \onslide<1-|handout:1>\textcolor<5-|handout:0>{lolit}{If \textcolor<2,3,4|handout:1->{lolit}{condition}, then \textcolor<3,4|handout:1->{nvhilit}{class}, else \textcolor<4|handout:1->{vhilit}{other class}.} \\
+  \onslide<5-|handout:1> \textcolor<handout:1->{nvhilit}{class} and \textcolor<handout:1->{vhilit}{other class} can be again an other condition.\\
+  \onslide<6-|handout:1>Resulting in \textcolor<handout:1->{hilit}{yet another class}.\\
   \onslide<7|handout:0>\Huge Confused?
   \note{
-  
+    These simple if-condition-then-statements are natural to use. At the same time by combining many of such statements, complicated relations can be captured.
   }
 \end{frame}
 
@@ -98,6 +109,9 @@
           child{ node [class2]{class 2}}}}
       child { node [class1] {class 1}};
   \end{tikzpicture}
+    \note{
+    In the form of trees really complicated statements can be comunicated effectivly. By traversing down the tree, taking the turns at the nodes, the class at the end note is assigned. 
+  }
 \end{frame}
 
 
@@ -120,7 +134,7 @@
   \begin{itemize}
   \item Transparent, all ``paramters" have a direkt meaning
   \item Easy to understand, the tree can be translated in ``If \ldots then \ldots" \textendash Statements
-  \item Natural formulation, these statements are in much use even for humans, it is common to capture expert knowledge in those sentences
+  \item Natural formulation, these statements are in much use. They are often employed to convey expert knowledge to non-experts.
   \item Dirt cheap in terms of computational costs
   \item High capacity or high generalizability, whatever is more appropriate
   \item Many data generating processes can be fitted, depending on the choosen capacity even all
@@ -128,21 +142,43 @@
   }
 \end{frame}
 
-\begin{frame}[c]{Summary}
-
-  \begin{enumerate}
-  \itemsep12pt
-  \item Important point
-  \item More important point
-  \item Even more important point
-  \end{enumerate}
-
+\begin{frame}[c]{Path to Garden Eden}
+  \onslide<1-2|handout: 1>1. How can these \textcolor{hilit}{conditions} be constructed?\\
+  \onslide<2|handout: 1>2. In which  \textcolor{vhilit}{order} should they apply?\\
+  \onslide<3|handout: 0>The path out of \textcolor{lolit}{Garden Eden},\\is the path to \textcolor{lolit}{Forest Eden}.\\ 
   \note{
-    It's always good to include a summary.
-}
+    In order to construct a tree automaticly one needs to find an algorythm to determen which conditions are to be used und in which order.
+  }
 \end{frame}
 
-\begin{frame}[c]{}
+\begin{frame}[c]{Rolemodel Eve}
+  \Large
+  \begin{center}
+    \only<1|handout: 0>{Do it like \textcolor{lolit}{Eve}\\}
+    \only<2|handout: 0>{1. Seek \textcolor{hilit}{differences} and \textcolor{hilit}{inequality}\\}
+    \only<3>{2. Be \textcolor{vhilit}{greedy}\\}
+    \only<4>{1. differences = \textcolor{hilit}{conditions}\\
+             2. greedy = \textcolor{vhilit}{order}}
+  \end{center}
+  \note{
+    The conditions are chosen in a way, which maximizes the differences in the resulting classes.\\
+    The order is determined, by how well a condition maximizes the differences. The best performing condition determines the first split. This is called ``greedy", becouse what delivers at first the best results, may not perform best in the long run.
+  }
+\end{frame}
+
+\begin{frame}[c]{Moody Eve}
+  \begin{center}
+    \onslide<1-2>eve = moody
+    \onslide<2> = 
+    \onslide<2-3>high entropy 
+    \onslide<3> = 
+    \onslide<3>sometimes useful\\
+    \onslide<4>\huge Many Trees = Forest
+  \end{center}
+  \note{
+    Trees often change fundamentally even when the input data is only slightly disturbed. Even though this is often not disirable, this characterstic can be used to grow many different trees. These ``forests" are created on purpose by slightly distirbing the training data. They can better differentiate between noise and systematics.
+  }
+\end{frame}
 
 \Large
 
