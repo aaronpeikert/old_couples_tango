@@ -1,6 +1,6 @@
-# Talk on &ldquo;Learning Trees and Forests&rdquo;
+# Talk on &ldquo;Biobehavioral Pathways Underlying Spousal Health Dynamics: Its Nature, Correlates, and Consequences&rdquo;
 
-Here you can find the [notes](https://github.com/aaronpeikert/ForestEden/releases/download/stusti/forest_withnotes.pdf), [dark slides](https://github.com/aaronpeikert/ForestEden/releases/download/stusti/forest.pdf) & bright slides [bright slides](https://github.com/aaronpeikert/ForestEden/releases/download/stusti/forest_bright.pdf).
+Seminar: „Individual development across the lifespan“ by Prof. Gersdorf
 
 ---
 

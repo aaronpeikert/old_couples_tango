@@ -1,4 +1,4 @@
-STEM = forest
+STEM = tango
 
 $(STEM).pdf: $(STEM).tex header.tex
 	xelatex $<
