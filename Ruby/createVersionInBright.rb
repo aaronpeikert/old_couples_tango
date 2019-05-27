@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-# modify LaTeX file so that it creates a handout with notes
+# modify LaTeX file so that it creates a bright version
 
 ifilename = ARGV.length > 0 ? ARGV[0] : "openaccess.tex"
 ofilename = ARGV.length > 1 ? ARGV[1] : ifilename.sub(".tex", "_bright.tex")
